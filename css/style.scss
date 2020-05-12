@@ -1,0 +1,176 @@
+@import "colours";
+
+// Reset
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  padding: 5% 10rem;
+  max-width: 1440px;
+  margin: auto;
+}
+
+// Typography
+body {
+  font-family: 'Barlow', sans-serif;
+  font-size: 18px;
+  overflow: hidden;
+}
+
+.primary-heading {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 4rem;
+  padding-bottom: 1rem;
+}
+
+.secondary-heading {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  font-size: 1.1rem;
+  color: $grayishBlue;
+  padding-bottom: 1rem;
+}
+
+.label-heading {
+  background-color: $veryDarkBlue;
+  padding: 0.2rem 0.75rem;
+  border-radius: 25px;
+  color: #fff;
+  letter-spacing: 0;
+  font-weight: 600;
+  margin-right: 0.5rem;
+}
+
+.lead {
+  color: $darkGrayishBlue;
+  font-size: 1.1rem;
+  padding-bottom: 4rem;
+}
+
+a {
+  text-decoration: none;
+}
+
+// Utilities
+.btn {
+  padding: 1rem 2.5rem;
+  background-color: $red;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  color: $lightGrayishBlue;
+  padding-bottom: 1rem;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.9;
+  }
+}
+
+// Nav
+#nav {
+  height: 100%;
+
+  .nav {
+    display: flex;
+    justify-content: space-between;
+
+    .logo {
+      height: 32px;
+    }
+
+    .nav-links .nav-link {
+      list-style: none;
+      display: inline-block;
+      margin-left: 2rem;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: $veryDarkBlue;
+
+      &:hover {
+        text-decoration: underline;
+      }
+
+      & .nav-link-last:hover {
+        color: $grayishBlue;
+      }
+
+      span {
+        color: $grayishBlue;
+      }
+    }
+  }
+}
+
+// Main
+#main {
+  height: 600px;
+
+  .main {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-content: center;
+    grid-gap: 2rem;
+
+    &-a {
+      width: 100%;
+      padding-top: 5%;
+      padding-left: 10rem;
+
+      .btn,
+      .secondary-heading {
+        display: inline-block;
+      }
+
+      .btn {
+        margin-right: 1rem;
+      }
+
+      .lead {
+        width: 50%;
+      }
+    }
+
+    &-b {
+      width: 100%;
+      height: 100%;
+
+      .device-container {
+        width: 100%;
+        height: 500px;
+
+        .devices {
+          position: relative;
+          height: 100%;
+          width: 100%;
+        }
+      }
+
+      .main-b-bg {
+        height: 500px;
+        width: 50%;
+        background-color: $lightGrayishBlue;
+        border-radius: 25px;
+        position: absolute;
+        top: -110px;
+        z-index: -1;
+        overflow: hidden;
+      }
+    }
+  }
+}
+
+
+@import "mobile";
