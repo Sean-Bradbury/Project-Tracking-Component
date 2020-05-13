@@ -1,5 +1,14 @@
 @import "colours";
 
+html,
+body {
+  overflow-x: hidden;
+}
+
+body {
+  position: relative
+}
+
 // Reset
 * {
   box-sizing: border-box;
