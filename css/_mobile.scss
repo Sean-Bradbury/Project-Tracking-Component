@@ -7,6 +7,15 @@
     font-size: 2.5rem;
   }
 
+  html,
+  body {
+    overflow-x: hidden;
+  }
+
+  body {
+    position: relative
+  }
+
   #nav {
     .nav {
       align-items: center;
