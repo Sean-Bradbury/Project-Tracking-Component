@@ -9,7 +9,6 @@
 
 .container {
   padding: 5% 10rem;
-  max-width: 1440px;
   margin: auto;
 }
 
@@ -17,7 +16,7 @@
 body {
   font-family: 'Barlow', sans-serif;
   font-size: 18px;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 .primary-heading {
@@ -28,7 +27,8 @@ body {
   padding-bottom: 1rem;
 }
 
-.secondary-heading {
+.secondary-heading,
+.secondary-heading-d {
   font-family: 'Barlow Condensed', sans-serif;
   font-weight: 400;
   text-transform: uppercase;
@@ -103,35 +103,46 @@ a {
         text-decoration: underline;
       }
 
-      & .nav-link-last:hover {
-        color: $grayishBlue;
+      a {
+        color: $veryDarkBlue;
       }
+    }
 
-      span {
+    .nav-links .nav-link-g {
+      color: $grayishBlue;
+
+      a {
         color: $grayishBlue;
       }
     }
   }
 }
 
+
 // Main
 #main {
-  height: 600px;
+  height: 100%;
 
   .main {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     align-content: center;
     grid-gap: 2rem;
+    height: 100%;
 
     &-a {
       width: 100%;
-      padding-top: 5%;
-      padding-left: 10rem;
+      height: 100%;
+      padding-right: 0;
+      padding-top: 6rem;
 
       .btn,
-      .secondary-heading {
+      .secondary-heading-d {
         display: inline-block;
+      }
+
+      .secondary-heading-m {
+        display: none;
       }
 
       .btn {
@@ -146,31 +157,34 @@ a {
     &-b {
       width: 100%;
       height: 100%;
+      margin-top: 5%;
 
-      .device-container {
-        width: 100%;
-        height: 500px;
+      .bg-svg-wrapper {
 
-        .devices {
-          position: relative;
-          height: 100%;
-          width: 100%;
+        .bg-svg {
+          background-image: url(/images/illustration-devices.svg);
+          background-size: cover;
+          height: 0;
+          padding: 0;
+          padding-bottom: 100%;
         }
       }
 
-      .main-b-bg {
-        height: 500px;
-        width: 50%;
-        background-color: $lightGrayishBlue;
-        border-radius: 25px;
-        position: absolute;
-        top: -110px;
-        z-index: -1;
-        overflow: hidden;
-      }
+    }
+
+    .main-b-bg {
+      height: 600px;
+      width: 50%;
+      background-color: $lightGrayishBlue;
+      border-radius: 25px;
+      position: absolute;
+      top: -20px;
+      z-index: -1;
+      overflow-x: hidden;
     }
   }
 }
+
 
 
 @import "mobile";

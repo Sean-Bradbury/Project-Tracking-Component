@@ -7,14 +7,13 @@
 
 .container {
   padding: 5% 10rem;
-  max-width: 1440px;
   margin: auto;
 }
 
 body {
   font-family: 'Barlow', sans-serif;
   font-size: 18px;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 .primary-heading {
@@ -25,7 +24,8 @@ body {
   padding-bottom: 1rem;
 }
 
-.secondary-heading {
+.secondary-heading,
+.secondary-heading-d {
   font-family: 'Barlow Condensed', sans-serif;
   font-weight: 400;
   text-transform: uppercase;
@@ -105,16 +105,20 @@ a {
   text-decoration: underline;
 }
 
-#nav .nav .nav-links .nav-link .nav-link-last:hover {
+#nav .nav .nav-links .nav-link a {
+  color: #242942;
+}
+
+#nav .nav .nav-links .nav-link-g {
   color: #a0a1ac;
 }
 
-#nav .nav .nav-links .nav-link span {
+#nav .nav .nav-links .nav-link-g a {
   color: #a0a1ac;
 }
 
 #main {
-  height: 600px;
+  height: 100%;
 }
 
 #main .main {
@@ -125,17 +129,23 @@ a {
   -ms-flex-line-pack: center;
       align-content: center;
   grid-gap: 2rem;
+  height: 100%;
 }
 
 #main .main-a {
   width: 100%;
-  padding-top: 5%;
-  padding-left: 10rem;
+  height: 100%;
+  padding-right: 0;
+  padding-top: 6rem;
 }
 
 #main .main-a .btn,
-#main .main-a .secondary-heading {
+#main .main-a .secondary-heading-d {
   display: inline-block;
+}
+
+#main .main-a .secondary-heading-m {
+  display: none;
 }
 
 #main .main-a .btn {
@@ -149,27 +159,153 @@ a {
 #main .main-b {
   width: 100%;
   height: 100%;
+  margin-top: 5%;
 }
 
-#main .main-b .device-container {
-  width: 100%;
-  height: 500px;
+#main .main-b .bg-svg-wrapper .bg-svg {
+  background-image: url(/images/illustration-devices.svg);
+  background-size: cover;
+  height: 0;
+  padding: 0;
+  padding-bottom: 100%;
 }
 
-#main .main-b .device-container .devices {
-  position: relative;
-  height: 100%;
-  width: 100%;
-}
-
-#main .main-b .main-b-bg {
-  height: 500px;
+#main .main .main-b-bg {
+  height: 600px;
   width: 50%;
   background-color: #eef3f6;
   border-radius: 25px;
   position: absolute;
-  top: -110px;
+  top: -20px;
   z-index: -1;
-  overflow: hidden;
+  overflow-x: hidden;
+}
+
+@media only screen and (max-width: 375px) {
+  .container {
+    padding: 5% 5%;
+  }
+  .primary-heading {
+    font-size: 2.5rem;
+  }
+  #nav .nav {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  #nav .nav .nav-links {
+    display: none;
+  }
+  #nav .nav .hamburger-container {
+    padding: 0.5rem 0.75rem;
+    background: url(/images/icon-hamburger.svg);
+    background-position: center;
+    background-size: cover;
+  }
+  #nav .nav .hamburger-container-close {
+    padding: 0.5rem 0.75rem;
+    background: url(/images/icon-close.svg);
+    background-position: center;
+    background-size: cover;
+  }
+  #nav .nav .nav-links-mobile {
+    display: block;
+    position: absolute;
+    top: 80px;
+    margin: auto;
+    background-color: #fff;
+    width: 90%;
+    max-height: 300px;
+    padding: 1rem;
+    -webkit-box-shadow: 0 0 10px #dddddd;
+            box-shadow: 0 0 10px #dddddd;
+  }
+  #nav .nav .nav-links-mobile .nav-link {
+    display: block;
+    text-align: center;
+    padding: 1rem;
+    margin: 0;
+  }
+  #nav .nav .nav-links-mobile .nav-link:nth-child(3) {
+    padding-bottom: 1.5rem;
+  }
+  #nav .nav .nav-links-mobile .nav-link:last-child {
+    padding-top: 1.5rem;
+    border-top: 1px solid #a0a1ac;
+  }
+  #nav .nav .nav-links-mobile .nav-link-dot {
+    display: none;
+  }
+  #main {
+    height: 100%;
+  }
+  #main .main {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+        grid-template-areas: 'image' 'text';
+    height: 100%;
+    grid-gap: 5rem;
+  }
+  #main .main-a {
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;
+    grid-area: text;
+  }
+  #main .main-a .lead {
+    width: 80%;
+  }
+  #main .main-a .secondary-heading-d {
+    display: none;
+  }
+  #main .main-a .main-schedule {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  #main .main-a .main-schedule .btn {
+    font-size: 1rem;
+  }
+  #main .main-a .main-schedule .btn {
+    padding: 1rem 1rem;
+  }
+  #main .main-a .main-schedule .secondary-heading-m {
+    display: inline-block;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-size: 1rem;
+    color: #a0a1ac;
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+  }
+  #main .main-b {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    grid-area: image;
+  }
+  #main .main-b .bg-svg-wrapper .bg-svg {
+    width: 50%;
+    height: 0;
+    background-image: url(/images/illustration-devices.svg);
+    background-size: cover;
+    padding: 0;
+    padding-bottom: 75%;
+    padding-left: 50%;
+  }
+  #main .main .main-b-bg {
+    height: 550px;
+    width: 100%;
+    background-color: #eef3f6;
+    border-radius: 25px;
+    position: absolute;
+    top: -110px;
+    right: -50%;
+    z-index: -1;
+    overflow: hidden;
+  }
 }
 /*# sourceMappingURL=style.css.map */

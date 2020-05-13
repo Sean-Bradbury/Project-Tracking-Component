@@ -1,0 +1,147 @@
+@media only screen and (max-width: 375px) {
+  .container {
+    padding: 5% 5%;
+  }
+
+  .primary-heading {
+    font-size: 2.5rem;
+  }
+
+  #nav {
+    .nav {
+      align-items: center;
+
+      .nav-links {
+        display: none;
+      }
+
+      .hamburger-container {
+        padding: 0.5rem 0.75rem;
+        background: url(/images/icon-hamburger.svg);
+        background-position: center;
+        background-size: cover;
+      }
+
+      .hamburger-container-close {
+        padding: 0.5rem 0.75rem;
+        background: url(/images/icon-close.svg);
+        ;
+        background-position: center;
+        background-size: cover;
+      }
+
+      .nav-links-mobile {
+        display: block;
+        position: absolute;
+        top: 80px;
+        margin: auto;
+        background-color: #fff;
+        width: 90%;
+        max-height: 300px;
+        padding: 1rem;
+        box-shadow: 0 0 10px rgb(221, 221, 221);
+
+        .nav-link {
+          display: block;
+          text-align: center;
+          padding: 1rem;
+          margin: 0;
+
+          &:nth-child(3) {
+            padding-bottom: 1.5rem;
+          }
+
+          &:last-child {
+            padding-top: 1.5rem;
+            border-top: 1px solid $grayishBlue;
+          }
+        }
+
+        .nav-link-dot {
+          display: none;
+        }
+      }
+    }
+  }
+
+  #main {
+    height: 100%;
+
+    .main {
+      grid-template-columns: 1fr;
+      grid-template-areas:
+        'image'
+        'text';
+      height: 100%;
+      grid-gap: 5rem;
+
+      &-a {
+        grid-area: text;
+
+        .lead {
+          width: 80%;
+        }
+
+        .secondary-heading-d {
+          display: none;
+        }
+
+        .main-schedule {
+          display: flex;
+          align-items: center;
+
+          .btn {
+            font-size: 1rem;
+          }
+
+          .btn {
+            padding: 1rem 1rem;
+          }
+
+          .secondary-heading-m {
+            display: inline-block;
+            font-family: 'Barlow Condensed', sans-serif;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            font-size: 1rem;
+            color: $grayishBlue;
+            padding-bottom: 1rem;
+            padding-top: 1rem;
+          }
+        }
+      }
+
+      &-b {
+        grid-area: image;
+
+        .bg-svg-wrapper {
+
+          .bg-svg {
+            width: 50%;
+            height: 0;
+            background-image: url(/images/illustration-devices.svg);
+            background-size: cover;
+            padding: 0;
+            padding-bottom: 75%;
+            padding-left: 50%;
+          }
+        }
+
+      }
+
+      .main-b-bg {
+        height: 550px;
+        width: 100%;
+        background-color: $lightGrayishBlue;
+        border-radius: 25px;
+        position: absolute;
+        top: -110px;
+        right: -50%;
+        z-index: -1;
+        overflow: hidden;
+      }
+    }
+  }
+
+}
